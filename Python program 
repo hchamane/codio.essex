@@ -1,0 +1,76 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNTBmTF9KoseMPjgw55T2Lt",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/hchamane/codio.essex/blob/master/Python%20program%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Rttut5beZ5xw",
+        "outputId": "83b93625-17c6-4aea-ed1c-04c1b99d7b0f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hainadine\n",
+            "45\n",
+            "40\n",
+            "50\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Person:\n",
+        "    def __init__(self, name, age):\n",
+        "        self.name = name\t\t# Unprotected variable\n",
+        "        self._age = age\t\t# Protected variable\n",
+        "    \n",
+        "    def get_age(self):\n",
+        "        return self._age\n",
+        "    \n",
+        "    def set_age(self, age):\n",
+        "        self._age = age\n",
+        "        \n",
+        "person1 = Person(\"Hainadine\", 45)\n",
+        "\n",
+        "print(person1.name)\t\t# Output: Hainadine\n",
+        "print(person1.get_age())\t\t# Output: 45\n",
+        "\n",
+        "person1._age = 40\t\t# Unprotected access to protected variable\n",
+        "print(person1.get_age())\t\t# Output: 40\n",
+        "\n",
+        "person1.set_age(50)\t\t# Protected access to protected variable\n",
+        "print(person1.get_age())\t\t# Output: 50\n"
+      ]
+    }
+  ]
+}
